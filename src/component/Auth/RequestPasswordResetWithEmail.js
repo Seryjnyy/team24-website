@@ -49,7 +49,7 @@ function RequestResetPasswordWithEmail() {
     const resetPasswordRequest = async (username) => {
         let success;
 
-        await fetch('https://cors-everywhere-me.herokuapp.com/http://18.170.74.59:8080/api/user/reset-password?username='+ username, {
+        await fetch('http://18.170.74.59:8080/api/user/reset-password?username='+ username, {
             method: 'GET',
             headers: {
               'Content-Type' : 'application/x-www-form-urlencoded',

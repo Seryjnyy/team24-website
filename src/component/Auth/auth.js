@@ -12,7 +12,7 @@ export const AuthProvider = ({children}) => {
     const login = async (username, password) => {
         let success;
 
-        await fetch('https://cors-everywhere-me.herokuapp.com/http://18.170.74.59:8080/api/login', {
+        await fetch('http://18.170.74.59:8080/api/login', {
             method: 'POST',
             headers: {
               'Content-Type' : 'application/x-www-form-urlencoded',
@@ -48,7 +48,7 @@ export const AuthProvider = ({children}) => {
     const register = async (firstname, lastname, username, password) => {
         let success;
 
-        await fetch('https://cors-everywhere-me.herokuapp.com/http://18.170.74.59:8080/api/user/register', {
+        await fetch('http://18.170.74.59:8080/api/user/register', {
             method: 'POST',
             headers: {
               'Content-Type' : 'application/json',

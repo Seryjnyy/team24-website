@@ -8,7 +8,7 @@ function EnergyMixChart() {
   const { isLoading, isError, isSuccess, data } = useQuery("EnergyMix", fetchMix);
 
   async function fetchMix() {
-    const res = await fetch('https://cors-everywhere-me.herokuapp.com/http://api.carbonintensity.org.uk/generation');
+    const res = await fetch('http://api.carbonintensity.org.uk/generation');
     return res.json();
   }
 

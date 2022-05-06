@@ -15,7 +15,7 @@ function UserPreferences(props) {
         let token = auth.getAccessToken();
         console.log(token)
         let username = jwt_decode(token).sub;
-        const res = await fetch("https://cors-everywhere-me.herokuapp.com/http://18.170.74.59:8080/api/user/preferences?username=" + username, { headers: { "Authorization": "Bearer " + token } });
+        const res = await fetch("http://18.170.74.59:8080/api/user/preferences?username=" + username, { headers: { "Authorization": "Bearer " + token } });
         console.log("trygin")
         return res.json();
     }
@@ -49,7 +49,7 @@ function UserPreferences(props) {
 
         const token = auth.getAccessToken();
         setIsSendingOrFailed(true);
-        fetch('https://cors-everywhere-me.herokuapp.com/http://18.170.74.59:8080/api/user/preferences/energy-mix/update', {
+        fetch('http://18.170.74.59:8080/api/user/preferences/energy-mix/update', {
             method: 'POST',
             headers: {
                 'Authorization': "Bearer " + token,
