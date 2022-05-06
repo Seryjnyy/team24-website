@@ -49,7 +49,7 @@ function RequestResetPasswordWithEmail() {
     const resetPasswordRequest = async (username) => {
         let success;
 
-        await fetch('http://172.31.25.8:8080/api/user/reset-password?username='+ username, {
+        await fetch('https://172.31.25.8:8080/api/user/reset-password?username='+ username, {
             method: 'GET',
             headers: {
               'Content-Type' : 'application/x-www-form-urlencoded',

@@ -15,7 +15,7 @@ function EnergyGraph() {
 
   async function fetchAIData() {
     const dateString = date.toLocaleDateString('en-CA');
-    const res = await fetch("http://172.31.46.80:6001/requests/getCarbonData?fromDate=" + dateString + "&toDate=" + dateString);
+    const res = await fetch("https://172.31.46.80:6001/requests/getCarbonData?fromDate=" + dateString + "&toDate=" + dateString);
     return res.json();
   }
 

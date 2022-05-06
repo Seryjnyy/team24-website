@@ -35,7 +35,7 @@ function Transactions() {
 
   async function fetchTransactions() {
     let token = auth.getAccessToken();
-    const res = await fetch("http://172.31.12.142:6786/blockchain/transactions", {
+    const res = await fetch("https://172.31.12.142:6786/blockchain/transactions", {
       headers: { Authorization: "Bearer " + token },
     });
     return res.json();

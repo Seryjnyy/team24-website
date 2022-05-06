@@ -25,7 +25,7 @@ function RequestResetPassword() {
     const resetPasswordRequest = async () => {
         let success;
 
-        await fetch('http://172.31.25.8:8080/api/user/reset-password?username='+ jwt_decode(getAccessToken()).sub, {
+        await fetch('https://172.31.25.8:8080/api/user/reset-password?username='+ jwt_decode(getAccessToken()).sub, {
             method: 'GET',
             headers: {
               'Content-Type' : 'application/x-www-form-urlencoded',

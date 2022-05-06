@@ -43,7 +43,7 @@ function UserTransactions() {
 
     async function fetchUserTransactions() {
         let token = auth.getAccessToken();
-        const res = await fetch("http://172.31.12.142:6786/blockchain/user-transactions?userID=" + auth.getUserID(), { headers: { "Authorization": "Bearer " + token } });
+        const res = await fetch("https://172.31.12.142:6786/blockchain/user-transactions?userID=" + auth.getUserID(), { headers: { "Authorization": "Bearer " + token } });
         return res.json();
     }
 
