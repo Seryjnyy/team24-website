@@ -13,7 +13,7 @@ function UserHardware() {
     async function fetchHardware() {
         let token = auth.getAccessToken();
         let username = jwt_decode(token).sub;
-        const res = await fetch("http://18.170.74.59:8080/api/user/hardware?username=" + username, { headers: { "Authorization": "Bearer " + token } });
+        const res = await fetch("https://cors-everywhere-me.herokuapp.com/http://18.170.74.59:8080/api/user/hardware?username=" + username, { headers: { "Authorization": "Bearer " + token } });
         return res.json();
     }
 

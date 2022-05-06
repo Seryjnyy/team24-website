@@ -14,7 +14,7 @@ function UserAutoOverride(props) {
     async function fetchUsers() {
         let token = auth.getAccessToken();
         let username = jwt_decode(token).sub;
-        const res = await fetch("http://18.170.74.59:8080/api/user/preferences?username=" + username, { headers: { "Authorization": "Bearer " + token } });
+        const res = await fetch("https://cors-everywhere-me.herokuapp.com/http://18.170.74.59:8080/api/user/preferences?username=" + username, { headers: { "Authorization": "Bearer " + token } });
         return res.json();
     }
 
@@ -49,7 +49,7 @@ function UserAutoOverride(props) {
 
         const username = jwt_decode(token).sub;
         setIsSendingOrFailed(true);
-        fetch('http://18.170.74.59:8080/api/user/preferences/auto-bias/update', {
+        fetch('https://cors-everywhere-me.herokuapp.com/http://18.170.74.59:8080/api/user/preferences/auto-bias/update', {
             method: 'POST',
             headers: {
                 'Authorization': "Bearer " + token,

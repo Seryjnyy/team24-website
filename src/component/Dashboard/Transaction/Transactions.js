@@ -35,7 +35,7 @@ function Transactions() {
 
   async function fetchTransactions() {
     let token = auth.getAccessToken();
-    const res = await fetch("http://18.170.116.112:6786/blockchain/transactions", {
+    const res = await fetch("https://cors-everywhere-me.herokuapp.com/http://18.170.116.112:6786/blockchain/transactions", {
       headers: { Authorization: "Bearer " + token },
     });
     return res.json();

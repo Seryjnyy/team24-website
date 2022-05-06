@@ -15,7 +15,7 @@ function UserAuto(props) {
         let token = auth.getAccessToken();
         console.log(token)
         let username = jwt_decode(token).sub;
-        const res = await fetch("http://18.170.74.59:8080/api/user/preferences?username=" + username, { headers: { "Authorization": "Bearer " + token } });
+        const res = await fetch("https://cors-everywhere-me.herokuapp.com/http://18.170.74.59:8080/api/user/preferences?username=" + username, { headers: { "Authorization": "Bearer " + token } });
         return res.json();
     }
 
@@ -32,7 +32,7 @@ function UserAuto(props) {
     // optimistically update paused
     setIsSendingOrFailed(true);
     setPaused(!paused);
-    fetch('http://18.170.74.59:8080/api/user/preferences/auto/update?username='+username+"&pause="+!paused, {
+    fetch('https://cors-everywhere-me.herokuapp.com/http://18.170.74.59:8080/api/user/preferences/auto/update?username='+username+"&pause="+!paused, {
         method: 'POST',
         headers: {
             'Authorization': "Bearer " + token,
