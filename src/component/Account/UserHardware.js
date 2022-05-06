@@ -13,14 +13,14 @@ function UserHardware() {
     async function fetchHardware() {
         let token = auth.getAccessToken();
         let username = jwt_decode(token).sub;
-        const res = await fetch("https://172.31.25.8:8080/api/user/hardware?username=" + username, { headers: { "Authorization": "Bearer " + token } });
+        const res = await fetch("http://18.170.74.59:8080/api/user/hardware?username=" + username, { headers: { "Authorization": "Bearer " + token } });
         return res.json();
     }
 
     let cardComponent;
     if (status === "loading") {
         cardComponent = <Typography>Loading...</Typography>;
-    } else if (status === "error" || data?.httpStatus != null) {
+    } else if (status === "error" || data?.httptatus != null) {
         cardComponent = <Typography> {data?.message ?? "Sorry, something went wrong..."}</Typography>;
     } else if(Object.keys(data).length === 0){
         cardComponent = <AccountDataCard cardContent={

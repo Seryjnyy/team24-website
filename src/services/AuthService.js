@@ -26,7 +26,7 @@ const isUserLoggedIn = () => {
 function refreshTokens(){
   const refreshToken = "Bearer " + localStorage.getItem("userRefreshToken");
 
-  fetch('https://172.31.25.8:8080/api/token/refresh', {
+  fetch('http://18.170.74.59:8080/api/token/refresh', {
     headers: {
       'Content-Type' : 'application/x-www-form-urlencoded',
       'Accept': 'application/json',
@@ -59,7 +59,7 @@ const login = async (_email, _password) => {
   //   body: JSON.stringify({username : _email, password : _password})
   // };
 
-  return await fetch('https://172.31.25.8:8080/api/login', {
+  return await fetch('http://18.170.74.59:8080/api/login', {
   method: 'POST',
   // credentials: "include",
   headers: {

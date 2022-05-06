@@ -15,7 +15,7 @@ function UserPreferences(props) {
         let token = auth.getAccessToken();
         console.log(token)
         let username = jwt_decode(token).sub;
-        const res = await fetch("https://172.31.25.8:8080/api/user/preferences?username=" + username, { headers: { "Authorization": "Bearer " + token } });
+        const res = await fetch("http://18.170.74.59:8080/api/user/preferences?username=" + username, { headers: { "Authorization": "Bearer " + token } });
         console.log("trygin")
         return res.json();
     }
@@ -49,7 +49,7 @@ function UserPreferences(props) {
 
         const token = auth.getAccessToken();
         setIsSendingOrFailed(true);
-        fetch('https://172.31.25.8:8080/api/user/preferences/energy-mix/update', {
+        fetch('http://18.170.74.59:8080/api/user/preferences/energy-mix/update', {
             method: 'POST',
             headers: {
                 'Authorization': "Bearer " + token,
@@ -67,7 +67,7 @@ function UserPreferences(props) {
     let cardComponent;
     if (status === "loading") {
         cardComponent = <Typography>Loading...</Typography>;
-    } else if (status === "error" || data?.httpStatus != null) {
+    } else if (status === "error" || data?.httptatus != null) {
         cardComponent = <Typography>Sorry, something went wrong...</Typography>;
     } else {
         cardComponent =

@@ -14,7 +14,7 @@ function UserAutoOverride(props) {
     async function fetchUsers() {
         let token = auth.getAccessToken();
         let username = jwt_decode(token).sub;
-        const res = await fetch("https://172.31.25.8:8080/api/user/preferences?username=" + username, { headers: { "Authorization": "Bearer " + token } });
+        const res = await fetch("http://18.170.74.59:8080/api/user/preferences?username=" + username, { headers: { "Authorization": "Bearer " + token } });
         return res.json();
     }
 
@@ -49,7 +49,7 @@ function UserAutoOverride(props) {
 
         const username = jwt_decode(token).sub;
         setIsSendingOrFailed(true);
-        fetch('https://172.31.25.8:8080/api/user/preferences/auto-bias/update', {
+        fetch('http://18.170.74.59:8080/api/user/preferences/auto-bias/update', {
             method: 'POST',
             headers: {
                 'Authorization': "Bearer " + token,
@@ -67,7 +67,7 @@ function UserAutoOverride(props) {
     let cardComponent;
     if (status === "loading") {
         cardComponent = <Typography>Loading...</Typography>;
-    } else if (status === "error" || data?.httpStatus != null) {
+    } else if (status === "error" || data?.httptatus != null) {
         cardComponent = <Typography>Sorry, something went wrong...</Typography>;
     } else {
         cardComponent =

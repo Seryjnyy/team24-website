@@ -8,7 +8,7 @@ function CarbonIntensityStats({dateFromParent}) {
         const dateString = dateFromParent.toLocaleDateString('en-CA');
         const from = dateString + "T00:00Z";
         const to = dateString + "T24:00Z";
-        const res = await fetch("https://api.carbonintensity.org.uk/intensity/stats/" + from + "/" + to);
+        const res = await fetch("http://api.carbonintensity.org.uk/intensity/stats/" + from + "/" + to);
         return res.json();
     });
 

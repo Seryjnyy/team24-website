@@ -45,7 +45,7 @@ function ResetPassword() {
     const resetPasswordRequest = async (token, password) => {
         let success;
 
-        await fetch('https://172.31.25.8:8080/api/user/set-password', {
+        await fetch('http://18.170.74.59:8080/api/user/set-password', {
             method: 'POST',
             headers: {
               'Content-Type' : 'application/x-www-form-urlencoded',
