@@ -35,7 +35,7 @@ function Transactions() {
 
   async function fetchTransactions() {
     let token = auth.getAccessToken();
-    const res = await fetch("http://18.170.116.112:6786/blockchain/transactions", {
+    const res = await fetch("https://z8tf5117oc.execute-api.eu-west-2.amazonaws.com/tester", {
       headers: { Authorization: "Bearer " + token },
     });
     return res.json();

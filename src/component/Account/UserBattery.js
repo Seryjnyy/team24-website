@@ -13,7 +13,7 @@ function UserBattery() {
     async function fetchBattery() {
         let token = auth.getAccessToken();
         let username = jwt_decode(token).sub;
-        const res = await fetch("http://18.170.74.59:8080/api/user/battery?username=" + username, { headers: { "Authorization": "Bearer " + token } });
+        const res = await fetch("https://ln016k6u46.execute-api.eu-west-2.amazonaws.com/UserBattery?username=" + username, { headers: { "Authorization": "Bearer " + token } });
         return res.json();
     }
 
