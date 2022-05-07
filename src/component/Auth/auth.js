@@ -17,7 +17,6 @@ export const AuthProvider = ({children}) => {
             headers: {
               'Content-Type' : 'application/x-www-form-urlencoded',
               'Accept': 'application/json',
-              'Cache': 'no-cache'
             },
             body: new URLSearchParams({
                 'username': username,
