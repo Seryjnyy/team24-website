@@ -12,10 +12,7 @@ export const AuthProvider = ({ children }) => {
     const login = async (username, password) => {
         let success;
 
-        await fetch('https://1kkhj7pk6k.execute-api.eu-west-2.amazonaws.com/UserLogin' + new URLSearchParams({
-            'username': username,
-            'password': password
-        }),
+        await fetch('https://1kkhj7pk6k.execute-api.eu-west-2.amazonaws.com/UserLogin?username='+username+'&password='+password,
             {
                 method: 'POST'
             })
