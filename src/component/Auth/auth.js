@@ -41,12 +41,10 @@ export const AuthProvider = ({ children }) => {
     const register = async (firstname, lastname, username, password) => {
         let success;
 
-        await fetch('http://18.170.74.59:8080/api/user/register', {
+        await fetch('https://k67ar4jv19.execute-api.eu-west-2.amazonaws.com/UserRegister', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                //   'Accept': 'application/json',
-                'Cache': 'no-cache'
             },
             body: JSON.stringify(
                 {
