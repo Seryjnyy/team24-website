@@ -32,7 +32,7 @@ function UserAuto(props) {
     // optimistically update paused
     setIsSendingOrFailed(true);
     setPaused(!paused);
-    fetch('http://18.170.74.59:8080/api/user/preferences/auto/update?username='+username+"&pause="+!paused, {
+    fetch('https://pem9g8w8qk.execute-api.eu-west-2.amazonaws.com/UserAutoUpdate?username='+username+"&pause="+!paused, {
         method: 'POST',
         headers: {
             'Authorization': "Bearer " + token,

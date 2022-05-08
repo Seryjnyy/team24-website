@@ -49,17 +49,11 @@ function UserAutoOverride(props) {
 
         const username = jwt_decode(token).sub;
         setIsSendingOrFailed(true);
-        fetch('http://18.170.74.59:8080/api/user/preferences/auto-bias/update', {
+        fetch('https://6r1czsvw9e.execute-api.eu-west-2.amazonaws.com/UserAutoBiasUpdate?username=' + jwt_decode(token).sub +'&bias=' + autoOverride, {
             method: 'POST',
             headers: {
-                'Authorization': "Bearer " + token,
-                'Content-Type': 'application/x-www-form-urlencoded',
-                'Cache': 'no-cache',
-            },
-            body: new URLSearchParams({
-                'username': jwt_decode(token).sub,
-                'bias': autoOverride,
-            })
+                'Authorization': "Bearer " + token
+            }
         })
             .then((response) => {console.log(response.status); setIsSendingOrFailed(false);}).catch((error) => { console.log(error); });
     }
