@@ -1,9 +1,9 @@
-import { createContext, useContext, useState} from "react";
+import { createContext, useContext, useState } from "react";
 
 
 const AuthContext = createContext(null);
 
-export const AuthProvider = ({children}) => {
+export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [accessToken, setAccessToken] = useState(null);
     const [refreshToken, setRefreshToken] = useState(null);
@@ -12,16 +12,13 @@ export const AuthProvider = ({children}) => {
     const login = async (username, password) => {
         let success;
 
-        await fetch('https://1kkhj7pk6k.execute-api.eu-west-2.amazonaws.com/UserLogin', {
-            method: 'POST',
-            headers: {
-              'Content-Type' : 'application/x-www-form-urlencoded',
-              'Accept': 'application/json',
-            },
-            body: new URLSearchParams({
-                'username': username,
-                'password': password,
-            })})
+        await fetch('https://1kkhj7pk6k.execute-api.eu-west-2.amazonaws.com/UserLogin' + new URLSearchParams({
+            'username': username,
+            'password': password
+        }),
+            {
+                method: 'POST'
+            })
             .then((response) => {
                 success = response.status === 200;
 
@@ -36,7 +33,7 @@ export const AuthProvider = ({children}) => {
                 setUserID(data.userID);
                 setUser(data.userID);
             })
-            .catch((error) => {console.log(error); success = false});
+            .catch((error) => { console.log(error); success = false });
 
         return success;
     }
@@ -50,24 +47,25 @@ export const AuthProvider = ({children}) => {
         await fetch('http://18.170.74.59:8080/api/user/register', {
             method: 'POST',
             headers: {
-              'Content-Type' : 'application/json',
-            //   'Accept': 'application/json',
-              'Cache': 'no-cache'
+                'Content-Type': 'application/json',
+                //   'Accept': 'application/json',
+                'Cache': 'no-cache'
             },
             body: JSON.stringify(
                 {
-                    'firstname' : firstname,
-                    'lastname' : lastname,
-                    'email' : username,
-                    'password' : password
+                    'firstname': firstname,
+                    'lastname': lastname,
+                    'email': username,
+                    'password': password
                 }
-            )})
+            )
+        })
             .then((response) => {
                 success = response.status === 200;
 
                 return response.json()
             })
-            .catch((error) => {console.log(error); success = false});
+            .catch((error) => { console.log(error); success = false });
 
         return success;
     }
@@ -94,14 +92,14 @@ export const AuthProvider = ({children}) => {
         return refreshToken;
     }
 
-    return(
-        <AuthContext.Provider value={{user, login, register, logout, isLoggedIn, getAccessToken, getRefreshToken, getUserID}}>{children}</AuthContext.Provider>      
+    return (
+        <AuthContext.Provider value={{ user, login, register, logout, isLoggedIn, getAccessToken, getRefreshToken, getUserID }}>{children}</AuthContext.Provider>
     )
 }
 
 const setLocalStorage = (name, data) => {
     localStorage.setItem(name, data);
-  }
+}
 
 export const useAuth = () => {
     return useContext(AuthContext);
