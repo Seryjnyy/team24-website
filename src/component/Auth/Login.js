@@ -214,7 +214,7 @@ function Login() {
             >
               Sign In
             </Button>
-            <p className='text-center'>Forgot your password? <RouteLink to="/reset-password">Reset here</RouteLink></p>
+            {/* <p className='text-center'>Forgot your password? <RouteLink to="/reset-password">Reset here</RouteLink></p> */}
             <div className='d-flex align-items-center mt-5 justify-content-between'>
               <div>
                 <img style={{marginRight:'20px'}} src={GoogleImg} alt="" />

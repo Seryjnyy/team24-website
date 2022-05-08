@@ -20,7 +20,8 @@ function Faq() {
         <Accordion.Item eventKey="1">
           <Accordion.Header>How do i reset my password?</Accordion.Header>
           <Accordion.Body>
-            Go to the login page and below the username and password field, click the 'forgot my password' link.  
+            Go to the login page and below the username and password field, click the 'forgot my password' link. 
+            Sorry, not available in the demo.
           </Accordion.Body>
         </Accordion.Item>
         <Accordion.Item eventKey="2">

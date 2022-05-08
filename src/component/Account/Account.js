@@ -37,7 +37,7 @@ function Account() {
         </Grid>
   
         <Grid item xs={12} sx={{ mb: 2, height:"100%", mt: 0, mx: {xs:2, md:5}, p:2, bgcolor: "#fbf7f5"}}>
-          <RequestResetPassword />
+          {/* <RequestResetPassword /> */}
         </Grid>
       
         
