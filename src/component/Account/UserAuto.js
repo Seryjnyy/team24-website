@@ -15,7 +15,7 @@ function UserAuto(props) {
         let token = auth.getAccessToken();
         console.log(token)
         let username = jwt_decode(token).sub;
-        const res = await fetch("http://18.170.74.59:8080/api/user/preferences?username=" + username, { headers: { "Authorization": "Bearer " + token } });
+        const res = await fetch("https://5gvn9bmfzi.execute-api.eu-west-2.amazonaws.com/UserPreferences?username=" + username, { headers: { "Authorization": "Bearer " + token } });
         return res.json();
     }
 
