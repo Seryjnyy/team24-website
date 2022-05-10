@@ -157,7 +157,7 @@ function Login() {
 
               InputProps={{
                 endAdornment: (
-                  <InputAdornment position="end">
+                  <InputAdornment position="start">
                     <img style={{ position: 'absolute', left: '10px', marginRight: '20px' }} src={MailIcon} alt='' />
                   </InputAdornment>
                 )
@@ -180,7 +180,7 @@ function Login() {
               InputProps={{
                 endAdornment: (
                   <>
-                    <InputAdornment position="end">
+                    <InputAdornment position="start">
                       <img style={{ position: 'absolute', left: '10px', marginRight: '20px' }} src={PassIcon} alt='' />
                     </InputAdornment>
                     <InputAdornment position="end">
