@@ -139,13 +139,13 @@ function UserTransactions() {
                 {
                   label: "Buy",
                   data: buys,
-                  backgroundColor: "rgb(255, 99, 132)",
+                  backgroundColor: "#4A88DA",
                   stack: "Stack 0",
                 },
                 {
                   label: "Sell",
                   data: sells,
-                  backgroundColor: "rgb(0, 0, 255)",
+                  backgroundColor: "#8AC054",
                   stack: "Stack 0",
                 },
               ],

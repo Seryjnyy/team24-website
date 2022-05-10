@@ -142,6 +142,7 @@ function Login() {
           </p>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
+              sx={{bgcolor:'#F9F9F9'}}
               margin="normal"
               error={emailError != ""}
               helperText={emailError}
@@ -161,7 +162,6 @@ function Login() {
                   </InputAdornment>
                 )
               }}
-              style={{background:'#F9F9F9'}}
 
             />
             <TextField
@@ -176,7 +176,7 @@ function Login() {
               type={showPassword ? "text" : "password"}
               id="password"
               autoComplete="current-password"
-              style={{background:'#F9F9F9'}}
+              sx={{bgcolor:'#F9F9F9'}}
               InputProps={{
                 endAdornment: (
                   <>
