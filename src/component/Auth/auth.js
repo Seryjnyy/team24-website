@@ -1,12 +1,9 @@
 import { createContext, useContext, useState } from "react";
 
-
 const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
-    const [accessToken, setAccessToken] = useState(null);
-    const [refreshToken, setRefreshToken] = useState(null);
     const [userID, setUserID] = useState(null)
 
     const login = async (username, password) => {
@@ -22,11 +19,9 @@ export const AuthProvider = ({ children }) => {
                 return response.json();
             })
             .then((data) => {
-                // setLocalStorage("userAccessToken", data.access_token);
-                // setLocalStorage("userRefreshToken", data.refresh_token);
+                setLocalStorage("userAccessToken", data.access_token);
+                setLocalStorage("userRefreshToken", data.refresh_token);
 
-                setAccessToken(data.access_token);
-                setRefreshToken(data.refresh_token);
                 setUserID(data.userID);
                 setUser(data.userID);
             })
@@ -66,25 +61,37 @@ export const AuthProvider = ({ children }) => {
     }
 
     const logout = () => {
-        // localStorage.removeItem("userAccessToken");
-        // localStorage.removeItem("userRefreshToken");
-
-        setAccessToken(null);
-        setRefreshToken(null);
+        localStorage.removeItem("userAccessToken");
+        localStorage.removeItem("userRefreshToken");
 
         setUser(null);
+        setUserID(null);
     }
 
     const isLoggedIn = () => {
-        return accessToken != null;
+        var user = localStorage.getItem("userAccessToken");
+
+        // no tokens
+        if(user === null){
+            return false;
+        }
+
+        // token expired
+        if(jwt_decode(user).exp < Date.now() / 1000){
+            logout();
+            return false;
+          }
+
+        // otherwise true
+        return true;
     }
 
     const getAccessToken = () => {
-        return accessToken;
+        return localStorage.getItem("userAccessToken");
     }
 
     const getRefreshToken = () => {
-        return refreshToken;
+        return localStorage.getItem("userRefreshToken");
     }
 
     return (
