@@ -153,8 +153,11 @@ function Register() {
                 label="First Name"
                 autoFocus
                 InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
+                  style: {
+                    paddingLeft: "40px"
+                  },
+                  startAdornment: (
+                    <InputAdornment position="start">
                       <img style={{ position: 'absolute', left: '10px', marginRight: '20px' }} src={UserIcon} alt='' />
                     </InputAdornment>
                   )
@@ -174,8 +177,11 @@ function Register() {
                 name="lastName"
                 autoComplete="family-name"
                 InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
+                  style: {
+                    paddingLeft: "40px"
+                  },
+                  startAdornment: (
+                    <InputAdornment position="start">
                       <img style={{ position: 'absolute', left: '10px', marginRight: '20px' }} src={UserIcon} alt='' />
                     </InputAdornment>
                   )
@@ -195,8 +201,11 @@ function Register() {
                 name="email"
                 autoComplete="email"
                 InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
+                  style: {
+                    paddingLeft: "40px"
+                  },
+                  startAdornment: (
+                    <InputAdornment position="start">
                       <img style={{ position: 'absolute', left: '10px', marginRight: '20px' }} src={MailIcon} alt='' />
                     </InputAdornment>
                   )
@@ -217,12 +226,15 @@ function Register() {
                 id="password"
                 autoComplete="new-password"
                 InputProps={{
-                     
-                  endAdornment: (
-                    <>
-                    <InputAdornment position="end">
+                  style: {
+                    paddingLeft: "40px"
+                  },
+                  startAdornment: (
+                    <InputAdornment position="start">
                       <img style={{ position: 'absolute', left: '10px', marginRight: '20px' }} src={PassIcon} alt='' />
                     </InputAdornment>
+                  ),
+                  endAdornment: (
                     <InputAdornment position="end">
                       <IconButton
                         aria-label="toggle password visibility"
@@ -233,7 +245,6 @@ function Register() {
                         {showPassword ? <VisibilityOff /> : <Visibility />}
                       </IconButton>
                     </InputAdornment>
-                    </>
                   )
                 }}
               />

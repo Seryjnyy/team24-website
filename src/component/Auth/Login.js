@@ -157,7 +157,7 @@ function Login() {
 
               InputProps={{
                 style: {
-                  paddingLeft: "20px"
+                  paddingLeft: "40px"
                 },
                 startAdornment: (
                   <InputAdornment position="start">
@@ -182,7 +182,7 @@ function Login() {
               sx={{bgcolor:'#F9F9F9'}}
               InputProps={{
                 style: {
-                  paddingLeft: "20px"
+                  paddingLeft: "40px"
                 },
                 startAdornment: (
                   <>

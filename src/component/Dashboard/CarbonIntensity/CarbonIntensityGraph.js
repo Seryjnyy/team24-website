@@ -49,14 +49,14 @@ function EnergyGraph() {
             label: "Actual",
             data: actual,
             fill: false,
-            borderColor: "rgb(80, 12, 22)",
+            borderColor: "#F5B945",
             tension: 0.1,
           },
           {
             label: "Forecast",
             data: forecast,
             fill: false,
-            borderColor: "rgb(75, 192, 192)",
+            borderColor: "#3768AA",
             tension: 0.1,
           }
 
