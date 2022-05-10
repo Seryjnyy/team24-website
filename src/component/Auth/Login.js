@@ -156,7 +156,10 @@ function Login() {
               autoFocus
 
               InputProps={{
-                endAdornment: (
+                style: {
+                  paddingLeft: "20px"
+                },
+                startAdornment: (
                   <InputAdornment position="start">
                     <img style={{ position: 'absolute', left: '10px', marginRight: '20px' }} src={MailIcon} alt='' />
                   </InputAdornment>
@@ -178,6 +181,9 @@ function Login() {
               autoComplete="current-password"
               sx={{bgcolor:'#F9F9F9'}}
               InputProps={{
+                style: {
+                  paddingLeft: "20px"
+                },
                 startAdornment: (
                   <>
                     <InputAdornment position="start">
