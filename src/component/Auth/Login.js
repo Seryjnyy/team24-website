@@ -178,7 +178,7 @@ function Login() {
               autoComplete="current-password"
               sx={{bgcolor:'#F9F9F9'}}
               InputProps={{
-                endAdornment: (
+                startAdorment: (
                   <>
                     <InputAdornment position="start">
                       <img style={{ position: 'absolute', left: '10px', marginRight: '20px' }} src={PassIcon} alt='' />
