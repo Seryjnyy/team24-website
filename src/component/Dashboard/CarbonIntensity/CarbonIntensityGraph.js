@@ -67,7 +67,7 @@ function EnergyGraph() {
           y: {
             title: {
               display: true,
-              text: "Carbon intensity",
+              text: "Carbon intensity (gCO2/kWh)",
               color: "#a7a7a7"
             },
             ticks: {
