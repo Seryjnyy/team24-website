@@ -67,13 +67,28 @@ function EnergyGraph() {
           y: {
             title: {
               display: true,
-              text: "Carbon intensity"
+              text: "Carbon intensity",
+              color: "#a7a7a7"
+            },
+            ticks: {
+              color: "#a7a7a7"
             }
           },
           x: {
             title: {
               display: true,
-              text: "Time"
+              text: "Time",
+              color: "#a7a7a7"
+            },
+            ticks: {
+              color: "#a7a7a7"
+            }
+          }
+        },
+        plugins:{
+          legend:{
+            labels:{
+              color: "#a7a7a7"
             }
           }
         }

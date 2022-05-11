@@ -51,6 +51,16 @@ function EnergyMixChart() {
             hoverOffset: 4,
           },
         ],
+
+      }}
+      options = {{
+        plugins:{
+          legend:{
+            labels:{
+              color: "#a7a7a7"
+            }
+          }
+        }
       }}
     />
   }

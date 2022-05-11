@@ -147,12 +147,18 @@ function Transactions() {
       </>
     );
 
+
     const options = {
       plugins: {
         title: {
           display: true,
           text: "Transactions",
         },
+        legend:{
+          labels:{
+            color: "#a7a7a7"
+          }
+        }
       },
       responsive: true,
       maintainAspectRatio: false,
@@ -161,7 +167,11 @@ function Transactions() {
           stacked: true,
           title: {
             display: true,
-            text: "Date"
+            text: "Date",
+            color: "#a7a7a7"
+          },
+          ticks: {
+            color: "#a7a7a7"
           }
         },
         y: {
@@ -169,7 +179,11 @@ function Transactions() {
           display: true,
           title: {
             display: true,
-            text: "Amount"
+            text: "Amount",
+            color: "#a7a7a7"
+          },
+          ticks: {
+            color: "#a7a7a7"
           }
         },
       },
