@@ -89,10 +89,14 @@ export const AuthProvider = ({ children }) => {
     }
 
     const getAccessToken = () => {
+        if(localStorage.getItem("userAccessToken") === null)
+            return "";
         return localStorage.getItem("userAccessToken");
     }
 
     const getRefreshToken = () => {
+        if(localStorage.getItem("userAccessToken") === null)
+            return "";
         return localStorage.getItem("userRefreshToken");
     }
 
